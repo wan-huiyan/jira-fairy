@@ -1,0 +1,8 @@
+{
+  "name": "jira-fairy",
+  "version": "1.1.1",
+  "description": "Claude Code skill: update Jira from what actually happened, draft-first and client-safe",
+  "type": "module",
+  "scripts": { "test": "node --test tests/*.test.mjs" },
+  "license": "MIT"
+}

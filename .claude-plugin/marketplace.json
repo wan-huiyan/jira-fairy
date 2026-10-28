@@ -1,0 +1,12 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wan-huiyan-jira-fairy",
+  "description": "A Claude Code skill that keeps Jira in step with the work: drafts updates from meetings, Slack, email and PRs, writes only on your yes",
+  "owner": { "name": "Huiyan Wan" },
+  "plugins": [{
+    "name": "jira-fairy",
+    "source": "./plugins/jira-fairy",
+    "description": "Update Jira from what actually happened (meetings, Slack, email, merged PRs): draft first, one sub-task per item, client-safe wording, titled links",
+    "version": "1.1.1"
+  }]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "jira-fairy",
+  "description": "Update Jira from what actually happened (meetings, Slack, email, merged PRs): draft first, one sub-task per item, client-safe wording, titled links",
+  "version": "1.1.1",
+  "author": { "name": "Huiyan Wan" },
+  "repository": "https://github.com/wan-huiyan/jira-fairy",
+  "license": "MIT",
+  "keywords": ["jira", "atlassian", "mcp", "project-management", "sub-tasks", "service-desk"]
+}

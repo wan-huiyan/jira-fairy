@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-label="jira-fairy reads meeting notes, Slack, email and merged PRs, drafts Jira updates with evidence, waits for your yes, then writes them and reads Jira back.">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a35bd6"/>
+    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf7ff"/><stop offset="0.55" stop-color="#ffffff"/><stop offset="1" stop-color="#fff5fb"/>
+    </linearGradient>
+    <linearGradient id="magic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7b3fe4"/><stop offset="1" stop-color="#e2489a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f3b8ff" stop-opacity="0.9"/><stop offset="1" stop-color="#f3b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <symbol id="sp" viewBox="-10 -10 20 20"><path d="M0,-10 C1,-2 2,-1 10,0 C2,1 1,2 0,10 C-1,2 -2,1 -10,0 C-2,-1 -1,-2 0,-10 z"/></symbol>
+  </defs>
+  <rect width="1200" height="560" rx="16" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="559" rx="16" fill="none" stroke="#eadcf8"/>
+
+  <!-- title -->
+  <text x="76" y="52" font-size="26" font-weight="700" fill="#172b4d">What happened → a Jira draft → <tspan fill="url(#magic)">your yes</tspan> → Jira updated</text>
+  <g transform="translate(40,26)">
+    <path d="M2 30 L22 10" stroke="#3b2a5a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M22 10 L25 7" stroke="#f5c542" stroke-width="4" stroke-linecap="round"/>
+    <use href="#sp" x="18" y="-6" width="16" height="16" fill="#f5c542"/>
+    <use href="#sp" x="4" y="0" width="8" height="8" fill="#e2489a"/>
+  </g>
+  <text x="40" y="82" font-size="16" fill="#5e6c84">jira-fairy turns evidence into proposed ticket changes. Nothing is written until you approve the exact table.</text>
+
+  <!-- column labels -->
+  <g font-size="13" font-weight="700" fill="#8a94a6" letter-spacing="1">
+    <text x="40" y="126">1 · EVIDENCE</text>
+    <text x="300" y="126">2 · DRAFT (NOTHING WRITTEN YET)</text>
+    <text x="772" y="126">3 · YOU</text>
+    <text x="900" y="126">4 · JIRA, READ BACK</text>
+  </g>
+
+  <!-- 1. evidence chips -->
+  <g font-size="15" fill="#172b4d">
+    <rect x="40" y="144" width="210" height="58" rx="10" fill="#f4f5f7"/>
+    <circle cx="66" cy="173" r="12" fill="none" stroke="#6554c0" stroke-width="2.5"/>
+    <rect x="62" y="165" width="8" height="12" rx="4" fill="#6554c0"/>
+    <text x="90" y="170" font-weight="600">Meeting notes</text>
+    <text x="90" y="189" font-size="12" fill="#5e6c84">the raw transcript</text>
+
+    <rect x="40" y="214" width="210" height="58" rx="10" fill="#f4f5f7"/>
+    <rect x="55" y="232" width="22" height="16" rx="4" fill="none" stroke="#36b37e" stroke-width="2.5"/>
+    <path d="M60 248 l-3 6 l8 -6" fill="#36b37e"/>
+    <text x="90" y="240" font-weight="600">Slack</text>
+    <text x="90" y="259" font-size="12" fill="#5e6c84">who asked for what</text>
+
+    <rect x="40" y="284" width="210" height="58" rx="10" fill="#f4f5f7"/>
+    <rect x="54" y="303" width="24" height="17" rx="2" fill="none" stroke="#ff8b00" stroke-width="2.5"/>
+    <path d="M54 303 l12 9 l12 -9" fill="none" stroke="#ff8b00" stroke-width="2.5"/>
+    <text x="90" y="310" font-weight="600">Email</text>
+    <text x="90" y="329" font-size="12" fill="#5e6c84">client requests</text>
+
+    <rect x="40" y="354" width="210" height="58" rx="10" fill="#f4f5f7"/>
+    <circle cx="60" cy="372" r="4" fill="none" stroke="#0065ff" stroke-width="2.5"/>
+    <circle cx="60" cy="394" r="4" fill="none" stroke="#0065ff" stroke-width="2.5"/>
+    <circle cx="74" cy="380" r="4" fill="none" stroke="#0065ff" stroke-width="2.5"/>
+    <path d="M60 376 v14 M60 388 q0 -8 10 -8" fill="none" stroke="#0065ff" stroke-width="2.5"/>
+    <text x="90" y="380" font-weight="600">Merged PRs</text>
+    <text x="90" y="399" font-size="12" fill="#5e6c84">ticket key in title</text>
+  </g>
+  <path d="M256 278 H290" stroke="#a35bd6" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#ah)"/>
+
+  <!-- 2. draft table -->
+  <rect x="300" y="144" width="440" height="268" rx="12" fill="#ffffff" stroke="#c9a6ef" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <g font-size="12" font-weight="700" fill="#5e6c84">
+    <text x="318" y="170">TICKET</text><text x="410" y="170">CHANGE</text><text x="590" y="170">EVIDENCE</text>
+  </g>
+  <line x1="314" y1="180" x2="726" y2="180" stroke="#e3e7ee"/>
+  <g font-size="14" fill="#172b4d">
+    <!-- row 1 -->
+    <text x="318" y="208" font-weight="600" fill="#0052cc">PROJ-11</text>
+    <text x="410" y="208">To Do → <tspan font-weight="700" fill="#006644">Done</tspan></text>
+    <rect x="590" y="194" width="44" height="20" rx="10" fill="#e3fcef"/><text x="612" y="208" font-size="11" font-weight="700" fill="#006644" text-anchor="middle">HIGH</text>
+    <text x="640" y="208" font-size="12" fill="#5e6c84">key in PR #123</text>
+    <line x1="314" y1="226" x2="726" y2="226" stroke="#f1f2f4"/>
+    <!-- row 2 -->
+    <text x="318" y="254" font-weight="600" fill="#0052cc">PROJ-14</text>
+    <text x="410" y="254">check, no move</text>
+    <rect x="590" y="240" width="62" height="20" rx="10" fill="#fff7d6"/><text x="621" y="254" font-size="11" font-weight="700" fill="#974f0c" text-anchor="middle">MEDIUM</text>
+    <text x="658" y="254" font-size="12" fill="#5e6c84">topic only</text>
+    <line x1="314" y1="272" x2="726" y2="272" stroke="#f1f2f4"/>
+    <!-- row 3 -->
+    <text x="318" y="300" font-weight="600" fill="#6554c0">+ new</text>
+    <text x="410" y="300">Sub-task of PROJ-9</text>
+    <text x="590" y="300" font-size="12" fill="#5e6c84">meeting action item</text>
+    <text x="410" y="318" font-size="12" fill="#5e6c84">component copied · no duplicate found</text>
+    <line x1="314" y1="330" x2="726" y2="330" stroke="#f1f2f4"/>
+    <!-- row 4 -->
+    <text x="318" y="358" font-weight="600" fill="#0052cc">PROJ-9</text>
+    <text x="410" y="358">comment: <tspan fill="#0052cc" text-decoration="underline">PR #123 — date filter</tspan></text>
+    <text x="590" y="376" font-size="12" fill="#5e6c84"></text>
+  </g>
+  <text x="318" y="398" font-size="12" fill="#8a94a6">Max 10 changes · shows who gets notified · client-safe wording</text>
+
+  <!-- 3. gate -->
+  <path d="M746 278 H770" stroke="#a35bd6" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#ah)"/>
+  <circle cx="824" cy="278" r="70" fill="url(#glow)"/>
+  <rect x="776" y="244" width="96" height="68" rx="34" fill="url(#magic)"/>
+  <text x="824" y="275" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">yes</text>
+  <text x="824" y="296" font-size="11" fill="#fde8ff" text-anchor="middle">to this table</text>
+  <text x="824" y="336" font-size="11" fill="#5e6c84" text-anchor="middle">table changes?</text>
+  <text x="824" y="351" font-size="11" fill="#5e6c84" text-anchor="middle">asks again</text>
+  <path d="M878 278 H894" stroke="#a35bd6" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round" marker-end="url(#ah)"/>
+
+  <!-- 4. jira read back -->
+  <rect x="894" y="138" width="272" height="280" rx="16" fill="none" stroke="#f3b8ff" stroke-opacity="0.55" stroke-width="6"/>
+  <rect x="900" y="144" width="260" height="268" rx="12" fill="#f6f0ff"/>
+  <g font-size="14" fill="#172b4d">
+    <text x="918" y="174" font-weight="700">PROJ-9  Client feedback</text>
+    <g>
+      <rect x="918" y="192" width="18" height="18" rx="4" fill="#36b37e"/><path d="M922 201 l4 4 l7 -8" stroke="#fff" stroke-width="2.2" fill="none"/>
+      <text x="946" y="206">PROJ-11 Done</text>
+    </g>
+    <g>
+      <rect x="918" y="224" width="18" height="18" rx="4" fill="none" stroke="#c1c7d0" stroke-width="2"/>
+      <text x="946" y="238">PROJ-14 To Do</text>
+    </g>
+    <g>
+      <rect x="918" y="256" width="18" height="18" rx="4" fill="none" stroke="#6554c0" stroke-width="2"/>
+      <text x="946" y="270">PROJ-15 new sub-task</text>
+    </g>
+    <g>
+      <rect x="918" y="288" width="18" height="18" rx="4" fill="#deebff"/><path d="M922 295 h10 M922 300 h7" stroke="#0052cc" stroke-width="2"/>
+      <text x="946" y="302">1 linked comment</text>
+    </g>
+  </g>
+  <line x1="918" y1="326" x2="1142" y2="326" stroke="#dfe1e6"/>
+  <text x="918" y="350" font-size="13" font-weight="700" fill="#006644">Read back from Jira:</text>
+  <text x="918" y="370" font-size="13" fill="#172b4d">assignee, status, parent,</text>
+  <text x="918" y="388" font-size="13" fill="#172b4d">component all match</text>
+
+  <!-- fairy dust -->
+  <g>
+    <use href="#sp" x="1120" y="30" width="22" height="22" fill="#f5c542"/>
+    <use href="#sp" x="1150" y="62" width="10" height="10" fill="#e2489a"/>
+    <use href="#sp" x="1096" y="70" width="8" height="8" fill="#a35bd6"/>
+    <use href="#sp" x="262" y="246" width="10" height="10" fill="#f5c542"/>
+    <use href="#sp" x="276" y="300" width="7" height="7" fill="#e2489a"/>
+    <use href="#sp" x="752" y="236" width="9" height="9" fill="#f5c542"/>
+    <use href="#sp" x="858" y="222" width="16" height="16" fill="#f5c542"/>
+    <use href="#sp" x="874" y="306" width="9" height="9" fill="#e2489a"/>
+    <use href="#sp" x="770" y="318" width="7" height="7" fill="#a35bd6"/>
+    <use href="#sp" x="1130" y="150" width="14" height="14" fill="#f5c542"/>
+    <use href="#sp" x="1112" y="178" width="7" height="7" fill="#e2489a"/>
+    <use href="#sp" x="1138" y="372" width="10" height="10" fill="#a35bd6"/>
+    <use href="#sp" x="1110" y="342" width="16" height="16" fill="#f5c542"/>
+    <circle cx="896" cy="232" r="1.8" fill="#f5c542"/><circle cx="886" cy="320" r="1.5" fill="#e2489a"/>
+    <circle cx="1100" cy="40" r="1.8" fill="#e2489a"/><circle cx="1166" cy="100" r="1.5" fill="#f5c542"/>
+    <circle cx="282" cy="270" r="1.5" fill="#a35bd6"/><circle cx="760" cy="296" r="1.5" fill="#f5c542"/>
+  </g>
+  <!-- the fairy: a ticket fairy flying forward, wings made of two Jira tickets, clipboard under her arm -->
+  <defs>
+    <linearGradient id="tunic" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f6bff"/><stop offset="1" stop-color="#8b4fe0"/></linearGradient>
+    <linearGradient id="tix" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef4ff"/><stop offset="1" stop-color="#f3e8ff"/></linearGradient>
+    <g id="ticket">
+      <path d="M-11 -16 h22 a3 3 0 0 1 3 3 v6 a3 3 0 0 0 0 6 v14 a3 3 0 0 1 -3 3 h-22 a3 3 0 0 1 -3 -3 v-14 a3 3 0 0 0 0 -6 v-6 a3 3 0 0 1 3 -3 z" fill="url(#tix)" fill-opacity="0.92" stroke="#7d9cf0" stroke-width="1.3"/>
+      <path d="M-7 -9 h14 M-7 -4 h9" stroke="#9fb4f2" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M-6 6 l3 3 l6 -7" stroke="#36b37e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+  <g transform="translate(818,192)">
+    <!-- ticket wings, behind -->
+    <use href="#ticket" transform="translate(-20,-16) rotate(-28)"/>
+    <use href="#ticket" transform="translate(-24,8) rotate(-72) scale(0.8)"/>
+    <!-- trailing legs -->
+    <path d="M-6 18 Q-14 24 -22 26" stroke="#ffcfae" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    <path d="M-1 20 Q-8 29 -14 34" stroke="#ffcfae" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+    <path d="M-22 26 q-5 1 -7 -2 q4 -1 7 2 z M-14 34 q-5 2 -8 -1 q4 -2 8 1 z" fill="#2f6bff" stroke="#2f6bff" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- tunic, leaning forward -->
+    <path d="M4 -3 Q-6 -1 -10 10 Q-13 18 -9 22 Q-2 24 6 20 Q10 10 9 1 Z" fill="url(#tunic)"/>
+    <path d="M-9 22 Q-5 19 -2 23 Q2 19 6 20" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1.2" fill="none"/>
+    <circle cx="1" cy="9" r="1.2" fill="#fff"/><circle cx="-4" cy="15" r="1.2" fill="#fff"/>
+    <!-- clipboard under the back arm (the draft) -->
+    <g transform="translate(-12,6) rotate(-14)">
+      <rect x="-7" y="-9" width="14" height="18" rx="2" fill="#c98b4a"/>
+      <rect x="-5" y="-6" width="10" height="13" rx="1" fill="#ffffff"/>
+      <rect x="-3" y="-11" width="6" height="4" rx="1" fill="#8a94a6"/>
+      <path d="M-3 -2 h6 M-3 1 h6 M-3 4 h4" stroke="#b39ddb" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+    <path d="M-3 0 Q-10 4 -13 10" stroke="#ffcfae" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- front arm reaching forward with the wand -->
+    <path d="M6 1 Q14 0 20 -6" stroke="#ffcfae" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M20 -6 L31 -21" stroke="#3b2a5a" stroke-width="2.2" stroke-linecap="round"/>
+    <use href="#sp" x="24" y="-33" width="17" height="17" fill="#f5c542"/>
+    <!-- neck + head, turned towards the Jira card -->
+    <rect x="1.5" y="-7" width="5" height="6" rx="1" fill="#ffcfae"/>
+    <circle cx="5" cy="-15" r="11" fill="#ffe3cf"/>
+    <!-- hair: a blue bob with a ponytail streaming back -->
+    <path d="M-6 -12 Q-8 -28 6 -27 Q17 -27 16 -16 Q12 -22 6 -21 Q2 -16 -6 -12 Z" fill="#1f3fa8"/>
+    <path d="M-5 -22 Q-16 -26 -24 -20 Q-18 -18 -15 -14 Q-10 -18 -5 -16 Z" fill="#1f3fa8"/>
+    <path d="M-6 -12 Q-7 -6 -3 -4" stroke="#1f3fa8" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <use href="#sp" x="-1" y="-30" width="8" height="8" fill="#ff8fb8"/>
+    <!-- face: open sparkly eyes looking ahead -->
+    <ellipse cx="4" cy="-14" rx="1.9" ry="2.6" fill="#2a1f4a"/><circle cx="4.6" cy="-15" r="0.7" fill="#fff"/>
+    <ellipse cx="11" cy="-14" rx="1.9" ry="2.6" fill="#2a1f4a"/><circle cx="11.6" cy="-15" r="0.7" fill="#fff"/>
+    <ellipse cx="2" cy="-9" rx="2.6" ry="1.5" fill="#ff8fb8" fill-opacity="0.75"/>
+    <ellipse cx="13" cy="-9" rx="2.4" ry="1.5" fill="#ff8fb8" fill-opacity="0.75"/>
+    <path d="M6 -8.5 Q8.5 -6 11 -8.5" stroke="#3b2a5a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  </g>
+  <path d="M852 168 C 870 150, 886 168, 897 196" fill="none" stroke="#f5c542" stroke-width="2.5" stroke-dasharray="1 7" stroke-linecap="round"/>
+  <use href="#sp" x="858" y="146" width="9" height="9" fill="#e2489a"/>
+  <use href="#sp" x="876" y="160" width="7" height="7" fill="#a35bd6"/>
+  <!-- evidence sparkles -->
+  <use href="#sp" x="238" y="136" width="12" height="12" fill="#f5c542"/>
+  <use href="#sp" x="242" y="402" width="9" height="9" fill="#a35bd6"/>
+  <use href="#sp" x="726" y="136" width="12" height="12" fill="#e2489a"/>
+  <use href="#sp" x="730" y="404" width="10" height="10" fill="#f5c542"/>
+  <!-- never strip -->
+  <rect x="40" y="440" width="1120" height="84" rx="12" fill="#fff1f6"/>
+  <text x="62" y="472" font-size="13" font-weight="700" fill="#b0246b" letter-spacing="1">THE FAIRY NEVER</text>
+  <g font-size="15" fill="#172b4d">
+    <text x="62" y="503">✕ deletes issues</text>
+    <text x="250" y="503">✕ follows instructions found inside tickets</text>
+    <text x="590" y="503">✕ marks Done on a guess</text>
+    <text x="820" y="503">✕ pastes bare URLs or guesses @mentions</text>
+  </g>
+</svg>
