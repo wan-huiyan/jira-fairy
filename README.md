@@ -102,6 +102,10 @@ The skill prepares these and gives you the keys and links; you click:
 
 Then, in a normal session: *"apply the ticked Jira updates"*.
 
+Want the digest as a whole morning page, with your calendar, inbox and chat alongside the Jira rows? See
+[morning-fairy](https://github.com/wan-huiyan/morning-fairy): it builds the tick boxes into a one-screen brief, and
+this skill applies the rows you tick.
+
 **Session handoff.** Add one step to your own handoff skill or end-of-session checklist:
 
 > Before finishing, follow jira-fairy section 4: list the tickets this session touched, draft the
@@ -189,6 +193,7 @@ Then, in a normal session: *"apply the ticked Jira updates"*.
 
 ## Related skills
 
+- [morning-fairy](https://github.com/wan-huiyan/morning-fairy) — the daily digest grown into a one-screen morning brief: your day drawn as a little world, Claude quests, and the Jira rows to tick.
 - [promptback](https://github.com/wan-huiyan/promptback) — tick-box HTML review pages; a natural format for the daily digest.
 
 ## Version history
