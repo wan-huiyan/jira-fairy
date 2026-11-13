@@ -1,6 +1,6 @@
 ---
 name: jira-fairy
-version: 1.1.1
+version: 1.2.0
 description: |
   Update Jira tickets (create, break down into sub-tasks, mark done, link GitHub work, comment)
   from what actually happened — meeting transcripts, Slack, email, merged PRs. Use when the user
@@ -146,6 +146,35 @@ a client-visible project means every write needs the user's yes.
 
 Schedule it with whatever your harness offers (a scheduled task / cron on weekday mornings).
 
+## 6. The timesheet site — three things that cost a session each
+
+Section 0 says `<timesheet-site>` is a separate Atlassian site reached by its own connector. Reading
+and filling it is a different job from ticket work, and each of these was learned the expensive way.
+
+**A timesheet tool's hours may be invisible to the Jira API as *yours*.** Tempo syncs a shadow worklog
+into the Jira issue, but its author is the Tempo **app account** (`accountType: "app"`), never the
+person who logged the time. So `worklogAuthor = currentUser()` can never match, and a zero there is
+**not** an empty timesheet — it is the only answer that filter can give. `listJiraIssueWorklogs` on
+the contract issue does return the worklogs, so the API can tell you how much time is on a contract;
+it cannot tell you whose. Check before concluding anything: read one worklog and look at its author.
+
+**The page is the check, and only one of its views is readable.** Open the week page and switch to the
+**Timesheet** tab: a work-item x day table with full keys and per-day totals, in one screenshot. The
+List view truncates issue keys to about eight characters, so two contracts on one client collapse into
+the same string. Tempo renders inside an iframe, so `get_page_text` and the accessibility tree both
+come back empty — a screenshot is the read, not a fallback. If the browser is not reachable, say so in
+one line and present the measurement as unverified. **Never imply a day is empty because you could not
+look.**
+
+**On that week page a single click on a worklog card is a WRITE, with no confirmation step.** Clicking
+a card can delete the entry outright. Never batch a click there with anything else: batching a Cancel
+with a week-navigation click once saved a seven-hour worklog that then had to be deleted, and it was
+impossible to tell afterwards whether the owner or the batch had pressed the button. To edit an entry,
+click its **pencil** icon (on the card, right of the title); the trash sits about 32px to its left, so
+zoom in on the icons and confirm which is which before clicking. Everything in a draft-only routine
+(section 5) applies here doubly: a scheduled run may READ this page and must never click on it, because
+there is nobody there to catch a mis-click.
+
 ## Anti-patterns (each one happened)
 
 - Concluding "can't reach Jira" from one connector without checking the other site.
@@ -154,3 +183,5 @@ Schedule it with whatever your harness offers (a scheduled task / cron on weekda
 - Re-verifying finished work the owner had already confirmed.
 - One sub-task per step (11 sub-tasks where 6 were wanted).
 - Raw URLs in comments.
+- Reading `worklogAuthor = currentUser()` as zero and calling a full timesheet empty.
+- Batching a click on a timesheet week page with anything else, and deleting a worklog by accident.

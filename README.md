@@ -155,6 +155,10 @@ this skill applies the rows you tick.
 - **Moving to Done can take several steps.** Service-desk workflows often have no direct Done
   (for example To Do → Assigned → In Progress → Resolved → Done), so one ticket may show 2–4
   transitions. That is the workflow, not a bug.
+- **A timesheet's hours can look like zero through the API.** Tempo's synced worklog is authored by
+  the Tempo app, not by you, so filtering a worklog search by the current user returns nothing even
+  when the week is full. The skill reads the timesheet page instead, and never calls a day empty
+  because it could not look.
 - **Notification emails lag the ticket.** If you read tickets from Jira emails as a fallback, the
   creation email does not show items added later.
 
@@ -198,6 +202,9 @@ this skill applies the rows you tick.
 
 ## Version history
 
+- **1.2.0** (2026-11-13) — a timesheet-site section: why a worklog filtered by the current user reads
+  as zero on a full week, which view of the week page is actually readable, and why a click on a
+  worklog card is a write with no confirmation.
 - **1.1.1** (2026-10-28) — README: which connector reaches which site, what you still do in the Jira UI, how to turn on the digest and handoff routines, trigger phrases, and the notifications and multi-step workflows that surprise people.
 - **1.1.0** (2026-10-28) — approval contract, evidence-scored "done", duplicate checks, ticket text treated as data, parent-field inheritance and account-id lookup.
 - **1.0.0** (2026-10-28) — first public release.
